@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAI Bio Lab — Координация және Реттеу</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --card-bg: #ffffff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+        header { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 2rem 1rem; text-align: center; }
+        header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        header p { font-size: 1.1rem; opacity: 0.9; }
+        nav { display: flex; justify-content: center; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; flex-wrap: wrap; }
+        nav button { background: none; border: none; padding: 1rem 1.5rem; font-size: 1rem; font-weight: 600; cursor: pointer; color: #64748b; transition: 0.3s; }
+        nav button.active, nav button:hover { color: var(--primary); border-bottom: 3px solid var(--primary); }
+        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+        .section { display: none; background: var(--card-bg); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .section.active { display: block; }
+        h2 { color: var(--primary-dark); margin-bottom: 1rem; font-size: 1.8rem; }
+        p { margin-bottom: 1rem; }
+        .topic-card { background: #f1f5f9; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border-left: 4px solid var(--primary); }
+        footer { text-align: center; padding: 2rem; color: #64748b; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>GenAI Bio Lab</h1>
+        <p>Биология пәнінен "Координация және Реттеу" бөліміне арналған портал</p>
+    </header>
+
+    <nav>
+        <button onclick="switchTab('theory')" class="active">Теория</button>
+        <button onclick="switchTab('lab')">Зертхана</button>
+        <button onclick="switchTab('quiz')">Тест</button>
+        <button onclick="switchTab('ai')">AI Көмекші</button>
+        <button onclick="switchTab('teacher')">Мұғалімге</button>
+    </nav>
+
+    <div class="container">
+        <div id="theory" class="section active">
+            <h2>Координация және Реттеу (7 тақырып)</h2>
+            <div class="topic-card"><h3>1. Жүйке жүйесінің типтері</h3><p>Диффузды, сатылы, түйінді және түтік тәрізді жүйке жүйелері.</p></div>
+            <div class="topic-card"><h3>2. Нейрон құрылымы</h3><p>Денриттер, аксон, синапс және импульстің берілуі.</p></div>
+            <div class="topic-card"><h3>3. Орталық және шеткі жүйке жүйесі</h3><p>Ми және жұлынның құрылысы.</p></div>
+            <div class="topic-card"><h3>4. Гормоналды реттеу</h3><p>Ішкі секреция бездері және гомеостаз.</p></div>
+            <div class="topic-card"><h3>5. Сезім мүшелері</h3><p>Рецепторлардың тітіркендіргіштерді қабылдауы.</p></div>
+            <div class="topic-card"><h3>6. Өсімдіктердің тітіркенгіштігі</h3><p>Тропизмдер мен фитогормондар.</p></div>
+            <div class="topic-card"><h3>7. Гомеостаз</h3><p>Ағзаның ішкі ортасының тұрақтылығы.</p></div>
+        </div>
+
+        <div id="lab" class="section">
+            <h2>Зертханалық жұмыстар</h2>
+            <p>Виртуалды тәжірибелер мен деректер жинау алаңы.</p>
+        </div>
+
+        <div id="quiz" class="section">
+            <h2>Білімді тексеру</h2>
+            <p>Тақырып бойынша тест сұрақтары.</p>
+        </div>
+
+        <div id="ai" class="section">
+            <h2>AI Көмекші</h2>
+            <p>Биология бойынша сұрақтарыңызды қойыңыз.</p>
+        </div>
+
+        <div id="teacher" class="section">
+            <h2>Мұғалімдерге</h2>
+            <p>Сабақ жоспарлары мен материалдар.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 GenAI Bio Lab.</p>
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
